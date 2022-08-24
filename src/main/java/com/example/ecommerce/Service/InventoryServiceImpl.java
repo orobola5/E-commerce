@@ -33,7 +33,8 @@ public class InventoryServiceImpl implements InventoryService {
     }
 
     @Override
-    public Optional<Inventory> modifyStock( Long id) {
+    public Optional<Inventory> modifyStock( Long id)
+    {
         return inventoryRepository.findById(id);
     }
 }
