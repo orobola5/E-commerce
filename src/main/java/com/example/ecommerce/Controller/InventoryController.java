@@ -7,6 +7,8 @@ import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
+
 @RestController
 @RequestMapping("/api/inventory")
 @AllArgsConstructor
@@ -29,9 +31,9 @@ public class InventoryController {
 
     @GetMapping("{id}")
     @ResponseStatus(HttpStatus.OK)
-    public Inventory modifyStock(@PathVariable("id") Long id){
+    public Optional<Inventory> modifyStock(@PathVariable("id") Long id){
 
-        return null;
+        return service.modifyStock(id);
     }
 
 
